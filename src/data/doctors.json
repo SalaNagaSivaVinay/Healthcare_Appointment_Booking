@@ -1,0 +1,102 @@
+[
+  {
+    "id": "1",
+    "name": "Dr. Vinay Kumar",
+    "specialization": "Cardiologist",
+    "image": "https://img.freepik.com/premium-photo/confident-anime-doctor-portrait-professional-medical-expert-healthcare-clinic-with-stethoscope_251136-112353.jpg",
+    "available": true,
+    "details": "Experienced in heart care and surgery.",
+    "experience": 8,
+    "patients": "2500"
+  },
+  {
+    "id": "2",
+    "name": "Dr. Pavani Reddy",
+    "specialization": "Dermatologist",
+    "image": "https://i.pinimg.com/474x/54/c2/3c/54c23c469bc874ec8f736cba8ede13e5.jpg",
+    "available": false,
+    "details": "Specialist in skin care and laser treatment.",
+    "experience": "6",
+    "patients": "2100"
+  },
+  {
+    "id": "3",
+    "name": "Dr. Bharka tunisa",
+    "specialization": "Neurologist",
+    "image": "https://i.pinimg.com/736x/e7/76/95/e77695178ac36bc7298146c32850620e.jpg",
+    "available": true,
+    "experience": "11",
+    "patients": "3900",
+    "details": "Treats brain and nervous system disorders."
+  },
+  {
+    "id": "4",
+    "name": "Dr. Madhu Varanasi",
+    "specialization": "Orthopedic Surgeon",
+    "image": "https://i.pinimg.com/736x/db/21/17/db2117b65075d190e2b128d8ea1a5bd9.jpg",
+    "available": true,
+    "experience": "5",
+    "patients": "2000",
+    "details": "Expert in bone and joint treatments."
+  },
+  {
+    "id": "5",
+    "name": "Dr. Suma Shetty",
+    "specialization": "Pediatrician",
+    "image": "https://img.freepik.com/free-photo/rendering-portrait-anime-doctor_23-2151151881.jpg",
+    "available": false,
+    "experience": "10",
+    "patients": "3500",
+    "details": "Treats children and infants with care."
+  },
+  {
+    "id": "6",
+    "name": "Dr. Kiran Dev",
+    "specialization": "ENT Specialist",
+    "image": "https://img.freepik.com/free-photo/rendering-anime-doctor-job_23-2151151776.jpg?semt=ais_hybrid&w=740&q=80",
+    "available": true,
+    "experience": "15",
+    "patients": "4500",
+    "details": "Expert in ear, nose and throat treatments."
+  },
+  {
+    "id": "7",
+    "name": "Dr. Sneha Rao",
+    "specialization": "Gynecologist",
+    "image": "https://img.freepik.com/premium-photo/confident-anime-doctor-portrait-professional-medical-expert-healthcare-clinic-with-stethoscope_251136-112360.jpg?semt=ais_hybrid&w=740&q=80",
+    "available": true,
+    "experience": "4",
+    "patients": "1500",
+    "details": "Specialist in women’s health and childbirth."
+  },
+  {
+    "id": "8",
+    "name": "Dr. Ramya",
+    "specialization": "Psychiatrist",
+    "image": "https://img.freepik.com/premium-photo/confident-anime-woman-doctor-portrait-professional-medical-expert-healthcare-clinic_251136-112368.jpg",
+    "available": false,
+    "experience": "9",
+    "patients": "2500",
+    "details": "Deals with mental health and therapy."
+  },
+  {
+    "id": "9",
+    "name": "Dr. Meena Das",
+    "specialization": "Oncologist",
+    "image": "https://img.freepik.com/premium-photo/confident-anime-doctor-portrait-professional-medical-expert-healthcare-clinic-with-stethoscope_251136-112339.jpg",
+    "available": true,
+    "experience": "12",
+    "patients": "3000",
+    "details": "Treats cancer patients with care."
+  },
+  {
+    "id": "10",
+    "name": "Dr. Rani",
+    "specialization": "Dentist",
+    "image": "https://img.freepik.com/premium-photo/confident-anime-woman-doctor-portrait-professional-medical-expert-healthcare-clinic_251136-112384.jpg",
+    "available": true,
+    "experience": "20",
+    "patients": "5500",
+    "details": "Expert in dental care and surgery."
+  }
+]

@@ -1,0 +1,150 @@
+/* src/pages/DoctorsList.css */
+
+.doctors-page {
+  padding: 20px;
+}
+
+.search-bar {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  display: block;
+}
+
+.doctors-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* spacing between cards */
+  justify-content: center;
+  padding: 10px;
+}
+
+.doctor-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 260px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.doctor-card:hover {
+  transform: translateY(-5px);
+}
+
+.doctor-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  border: 3px solid #4a90e2;
+}
+
+.book-btn {
+  margin-top: 10px;
+  background: #4a90e2;
+  color: #fff;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.book-btn:hover {
+  background: #357abd;
+}
+
+
+.doctors-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.doctor-card {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+
+
+.booking-header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #e0ffe0;
+  padding: 10px 20px;
+  border-radius: 0 0 0 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+  z-index: 999;
+}
+
+.booking-page {
+  background: #f7f7f7;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+.doctor-image-large {
+  width: 150px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.confirm-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+
+.book-btn.cancel {
+  background-color: #ff4d4d;
+}
+
+.booking-header {
+  background: #e6ffe6;
+  border: 1px solid #b2f2bb;
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+
+.cancel-btn {
+  background-color: #e53935;
+  color: white;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #c62828;
+}
