@@ -27,7 +27,6 @@ const DoctorsList = ({ query = "" }: { query?: string }) => {
   const [countdown, setCountdown] = useState(0);
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
-  const [targetDateTime, setTargetDateTime] = useState<Date | null>(null);
 
   const timeSlots = ["10:00 AM", "2:00 PM", "5:00 PM"];
   const unavailableDates = ["2025-08-05", "2025-08-07"]; // mock unavailable dates
@@ -65,7 +64,6 @@ const DoctorsList = ({ query = "" }: { query?: string }) => {
 
     const diffInSeconds = Math.floor((bookingDateTime.getTime() - now.getTime()) / 1000);
 
-    setTargetDateTime(bookingDateTime);
     setCountdown(diffInSeconds);
     setBookingConfirmed(true);
     setIsBookingPage(false);
@@ -81,7 +79,6 @@ const DoctorsList = ({ query = "" }: { query?: string }) => {
     setSelectedTime("");
     setCountdown(0);
     setIsBookingPage(false);
-    setTargetDateTime(null);
   };
 
   useEffect(() => {

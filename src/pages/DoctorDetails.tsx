@@ -1,6 +1,8 @@
 // DoctorDetails.tsx
 import { useParams, useNavigate } from "react-router-dom";
 import doctorsData from "../data/doctors.json";
+import { useState } from "react";
+
 
 interface Doctor {
   id: string;

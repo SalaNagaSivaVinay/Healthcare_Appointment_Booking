@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const BookingInfo = ({ booking }: any) => {
   const [seconds, setSeconds] = useState(60);

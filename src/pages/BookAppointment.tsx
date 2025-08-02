@@ -1,5 +1,5 @@
 // src/pages/BookAppointment.tsx
-import { useParams, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 const BookAppointment = () => {
