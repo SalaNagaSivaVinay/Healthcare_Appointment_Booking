@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 const BookAppointment = () => {
-  const { id } = useParams();
   const navigate = useNavigate();
   const [form, setForm] = useState({ name: '', email: '', datetime: '' });
 

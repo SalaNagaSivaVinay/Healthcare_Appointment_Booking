@@ -1,6 +1,6 @@
 // App.tsx
-import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import DoctorsList from "./pages/DoctorsList";
 import DoctorDetails from "./pages/DoctorDetails";
 import SearchBar from "./components/SearchBar";
