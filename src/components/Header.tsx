@@ -1,30 +1,35 @@
-import React, { useEffect, useState } from "react";
+// src/components/Header.tsx
+import React, { useEffect, useState } from 'react';
 
-const Header = ({ timer }: { timer: number | null }) => {
-  const [remainingTime, setRemainingTime] = useState(timer);
+interface HeaderProps {
+  timer: number | null;
+}
+
+const Header: React.FC<HeaderProps> = ({ timer }) => {
+  const [remainingTime, setRemainingTime] = useState<number | null>(timer);
 
   useEffect(() => {
-    if (timer) setRemainingTime(timer);
-  }, [timer]);
+    if (timer === null) return;
 
-  useEffect(() => {
+    setRemainingTime(timer);
     const interval = setInterval(() => {
-      setRemainingTime((prev) => (prev && prev > 0 ? prev - 1 : null));
+      setRemainingTime(prevTime => {
+        if (prevTime && prevTime > 0) return prevTime - 1;
+        clearInterval(interval);
+        return null;
+      });
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
-
-  const formatTime = (sec: number) => {
-    const min = Math.floor(sec / 60);
-    const s = sec % 60;
-    return `${min}:${s < 10 ? "0" : ""}${s}`;
-  };
+  }, [timer]);
 
   return (
-    <div className="absolute top-4 right-4 text-blue-600 font-semibold">
-      {remainingTime !== null ? `⏳ Booking in: ${formatTime(remainingTime)}` : null}
-    </div>
+    <header className="bg-blue-600 text-white p-4 text-center rounded shadow-md">
+      <h1 className="text-xl font-bold">Healthcare Appointment Booking</h1>
+      {remainingTime !== null && (
+        <p className="text-sm mt-1">Session ends in: {remainingTime}s</p>
+      )}
+    </header>
   );
 };
 

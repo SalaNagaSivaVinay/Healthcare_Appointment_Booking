@@ -1,6 +1,27 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-const BookingModal = ({ doctor, onClose, onConfirm }: any) => {
+// Define the type for doctor
+interface Doctor {
+  id: number;
+  name: string;
+  specialty: string;
+  image: string;
+  experience: string;
+  location: string;
+}
+
+// Define props type
+interface BookingModalProps {
+  doctor: Doctor | null;
+  onClose: () => void;
+  onConfirm: (bookingDetails: {
+    doctor: Doctor;
+    date: string;
+    time: string;
+  }) => void;
+}
+
+const BookingModal = ({ doctor, onClose, onConfirm }: BookingModalProps) => {
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
 

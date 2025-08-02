@@ -1,15 +1,27 @@
-import React from "react";
+// src/components/DoctorCard.tsx
 
-const DoctorCard = ({ doctor, onBook }: any) => {
+import React from 'react';
+
+interface Doctor {
+  name: string;
+  specialization: string;
+}
+
+interface DoctorCardProps {
+  doctor: Doctor;
+  onBook: (doctor: Doctor) => void;
+}
+
+const DoctorCard: React.FC<DoctorCardProps> = ({ doctor, onBook }) => {
   return (
-    <div className="border rounded-lg p-4 shadow-md mb-4 bg-white">
-      <h3 className="text-xl font-bold">{doctor.name}</h3>
+    <div className="doctor-card border p-4 rounded shadow-md bg-white">
+      <h2 className="text-lg font-bold">{doctor.name}</h2>
       <p className="text-gray-600">{doctor.specialization}</p>
       <button
-        className="mt-2 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600"
         onClick={() => onBook(doctor)}
+        className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
       >
-        Book Now
+        Book Appointment
       </button>
     </div>
   );
