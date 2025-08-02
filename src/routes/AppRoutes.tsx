@@ -6,9 +6,9 @@ import BookAppointment from '../pages/BookAppointment';
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<DoctorsList />} />
+      <Route path="/" element={<DoctorsList query="" />} />
       <Route path="/book-appointment" element={<BookAppointment />} />
-      {/* other routes if needed */}
+      {/* Add other routes here if needed */}
     </Routes>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import doctorsData from "../data/doctors.json";
 import "./DoctorsList.css";
 
@@ -20,7 +20,7 @@ const formatTime = (seconds: number): string => {
   return `${days}d ${String(hours).padStart(2, "0")}h ${String(minutes).padStart(2, "0")}m ${String(secs).padStart(2, "0")}s`;
 };
 
-const DoctorsList = ({ query }: { query: string }) => {
+const DoctorsList = ({ query = "" }: { query?: string }) => {
   const [selectedDoctor, setSelectedDoctor] = useState<Doctor | null>(null);
   const [isBookingPage, setIsBookingPage] = useState(false);
   const [bookingConfirmed, setBookingConfirmed] = useState(false);
@@ -30,6 +30,7 @@ const DoctorsList = ({ query }: { query: string }) => {
   const [targetDateTime, setTargetDateTime] = useState<Date | null>(null);
 
   const timeSlots = ["10:00 AM", "2:00 PM", "5:00 PM"];
+  const unavailableDates = ["2025-08-05", "2025-08-07"]; // mock unavailable dates
 
   const filteredDoctors = doctorsData.filter((doctor: Doctor) =>
     doctor.name.toLowerCase().includes(query.toLowerCase()) ||
@@ -114,14 +115,15 @@ const DoctorsList = ({ query }: { query: string }) => {
     return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
   };
 
+  const isUnavailable = (date: string) => unavailableDates.includes(date);
+
   return (
     <div className="doctors-container">
-      {/* Timer/Header */}
+      {/* Timer */}
       {bookingConfirmed && selectedDoctor && (
         <div className="booking-header">
           <p>
             <strong>Doctor:</strong> {selectedDoctor.name} |{" "}
-            <strong>Specialization:</strong> {selectedDoctor.specialization} |{" "}
             <strong>Date:</strong> {selectedDate} |{" "}
             <strong>Time:</strong> {selectedTime} |{" "}
             <strong>Time Left:</strong> {formatTime(countdown)}
@@ -129,7 +131,7 @@ const DoctorsList = ({ query }: { query: string }) => {
         </div>
       )}
 
-      {/* Show doctor cards if not in booking form */}
+      {/* Doctor Cards */}
       {!isBookingPage && (
         <>
           {filteredDoctors.map((doctor, index) => (
@@ -157,8 +159,6 @@ const DoctorsList = ({ query }: { query: string }) => {
           <img src={selectedDoctor.image} alt={selectedDoctor.name} className="doctor-image-large" />
           <p><strong>Specialization:</strong> {selectedDoctor.specialization}</p>
           <p><strong>Details:</strong> {selectedDoctor.details}</p>
-          <p><strong>Experience:</strong> {selectedDoctor.experience} yrs</p>
-          <p><strong>Patients:</strong> {selectedDoctor.patients}</p>
 
           <label><strong>Select Date:</strong></label>
           <input
@@ -166,7 +166,11 @@ const DoctorsList = ({ query }: { query: string }) => {
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
             min={new Date().toISOString().split("T")[0]}
+            className={isUnavailable(selectedDate) ? "unavailable-date" : ""}
           />
+          {isUnavailable(selectedDate) && (
+            <p className="date-warning">❌ Booking not available on this day</p>
+          )}
 
           <br /><br />
 
@@ -183,9 +187,9 @@ const DoctorsList = ({ query }: { query: string }) => {
           <button className="confirm-btn" onClick={handleConfirmBooking}>
             Confirm Booking
           </button>
-          <button className="cancel-btn bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded" onClick={handleCancelBooking}>
+          <button className="cancel-btn" onClick={handleCancelBooking}>
             Cancel
-            </button>
+          </button>
         </div>
       )}
     </div>
